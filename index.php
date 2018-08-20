@@ -84,7 +84,7 @@ include ('db.php');
 			if($result ->num_rows>0){
 				//output data of each row
 				while($row=$result->fetch_assoc()){
-					echo " Name: " . $row["Name"]. "<br>". " Price: " . $row["Price"]."<br>". " Detail: ". $row["Detail"]."<br><br>";
+					echo "<img src=\"./img/menuBtn1.jpg\">"."<br>"." Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
 				}
 			} else {
 				echo "0 results";
@@ -101,7 +101,7 @@ include ('db.php');
 			if($result ->num_rows>0){
 				//output data of each row
 				while($row=$result->fetch_assoc()){
-					echo " Name: " . $row["Name"]. "<br>". " Price: " . $row["Price"]."<br>". " Detail: ". $row["Detail"]."<br><br>";
+					echo " Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
 				}
 			} else {
 				echo "0 results";
@@ -118,7 +118,7 @@ include ('db.php');
 			if($result ->num_rows>0){
 				//output data of each row
 				while($row=$result->fetch_assoc()){
-					echo " Name: " . $row["Name"]. "<br>". " Price: " . $row["Price"]."<br>". " Detail: ". $row["Detail"]."<br><br>";
+					echo " Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
 				}
 			} else {
 				echo "0 results";
@@ -135,7 +135,7 @@ include ('db.php');
 			if($result ->num_rows>0){
 				//output data of each row
 				while($row=$result->fetch_assoc()){
-					echo " Name: " . $row["Name"]. "<br>". " Price: " . $row["Price"]."<br>". " Detail: ". $row["Detail"]."<br><br>";
+					echo " Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
 				}
 			} else {
 				echo "0 results";
@@ -143,6 +143,26 @@ include ('db.php');
 		?>
 	</div>
 
+<?php 
+	$sql = "SELECT COUNT(*) FROM `brownies`";
+	$resultCount = $conn->query($sql);
+	$total = count((array) $resultCount);
+
+
+	echo "$total";
+	//echo gettype($resultCount); get the datatype of variable.
+
+for ($i=0; $i < $total; $i++) { 
+	echo "value = $i";
+	echo $row["Name"];
+
+	/*while($row[$i]=$result->fetch_assoc()){
+		echo " Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
+	}*/
+}
+
+
+?>
 
 	<script>
 	$(document).ready(function(){
@@ -185,7 +205,7 @@ include ('db.php');
 	</script>
 
 	</div>
-	
+
 </div>	  
 
 <!--Testimoni-->
