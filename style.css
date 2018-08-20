@@ -1,0 +1,120 @@
+body{
+	background-color: #C0C0C0;
+	color: #fff;
+	padding: 20PX;
+	margin: 30px;
+}
+.container{
+	width: 80%;
+	margin: auto;
+	font-family: Gill Sans;
+	font-size: 120%;
+	color: #C0C0C0;
+	background-color: #464646;
+	
+
+}
+
+.navItem{
+	color: #fff;
+	background: #464646;
+}
+
+.box-1{
+	font-size: 90%;
+	border: 3px dotted #ccc;
+	background-color: #91492C;
+	padding:10px;
+	margin-top: 20px; 
+	margin-left: 10px;
+	text-align: center;
+
+}
+
+
+figure{
+	padding: 20px;
+	margin-top: 50px;
+
+}
+
+.card{
+	color:#C0C0C0;
+	background-color: #91492C;
+	font-family: Marker Felt;
+	padding:10px;
+	margin-top: 20px; 
+	margin-left: 10px;
+	text-align: center;
+}
+
+.cardHeader{
+	color: #C0C0C0;
+	font-size: 200%;
+	background-color: #91492C;
+	font-family: Gill Sans;
+	text-align: center;
+	padding: 10px;
+}
+
+.blockquote-footer{
+	color: #262626;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    background-color: #464646;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    font-family: Gill Sans;
+    font-size: 120%;
+    color: #fff;
+    background-color: #91492C;
+    padding: 20px;
+}
+
+.btn-secondary {
+    color: #f8f9fa;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    font-family: Gill Sans;
+
+}
+
+
+
+a.button {
+  display:block;
+  width:100px;
+  height:50px;
+  background-color:#424242;
+  color:#fff;
+  line-height:50px;
+  text-decoration: none;
+  margin: 1px;
+}
+
+
+.menuBtn {
+  margin-top:30px;
+}
+
+div[class*="menuBtn-"] { 
+  display:none;
+}
+
+div.active { 
+  display:block;
+}
+
+
+#mainFooter{
+	background: #333;
+	color: #fff;
+	text-align: center;
+	font-family: Gill Sans;
+	margin-top: 200px;
+}
+
