@@ -6,7 +6,7 @@ include ('db.php');
 <html>
 <head>
 
-	<title>WebPage1</title>
+	<title>BrowniesBoobies</title>
 		<link rel="shortcut icon" type="image/jpg" href="img/favicon.jpg">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -50,207 +50,216 @@ include ('db.php');
 
 			  
 <!-- Menu Button -->
-<div class="tab-pane fade" id="pills-menu" role="tabpanel" aria-labelledby="pills-menu-tab">
+
+        <div class="tab-pane fade" id="pills-menu" role="tabpanel" aria-labelledby="pills-menu-tab">
 			  	<br>
 
-	<div class="box-2">
-					<a id="btnBrownies1" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Brownies Chocolate Mousse"> Brownies Chocolate Mousse
-					</a>
+	    <div class="box-2">
 
-					<a id="btnBrownies2" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Brownies Cheese">
-					Brownies Cheese 
-					</a>
-							
-					<a id="btnBrownies3" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Brownies Marble">
-					Brownies Marble
-					</a>
-								
-					<a id="btnBrownies4" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Brownies Durian">
-					Brownies Durian
-					</a>
-					<br>
-					<br>
+			<a id="btnBrownies1" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Brownies Chocolate Mousse"> Brownies Chocolate Mousse
+			</a>
+
+			<a id="btnBrownies2" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Brownies Cheese">
+			Brownies Cheese 
+			</a>
+					
+			<a id="btnBrownies3" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Brownies Marble">
+			Brownies Marble
+			</a>
+						
+			<a id="btnBrownies4" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Brownies Durian">
+			Brownies Durian
+			</a>
+			<br>
+			<br>
 
 						
 <!--Menu Button Contents -->	
 
 
-	<div id="getBrownies1">
-		<?php
-			
-			$sql = "SELECT * FROM `brownies` WHERE ID=1";
-			$result = $conn->query($sql);
+		<div id="getBrownies1">
+			<?php
+				
+				$sql = "SELECT * FROM `brownies` WHERE ID=1";
+				$result = $conn->query($sql);
 
-			if($result ->num_rows>0){
-				//output data of each row
-				while($row=$result->fetch_assoc()){
-					echo "<img src=\"./img/menuBtn1.jpg\">"."<br>"." Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
+				if($result ->num_rows>0){
+					//output data of each row
+					while($row=$result->fetch_assoc()){
+						echo "<img src=\"./img/menuBtn1.jpg\" class=\"rounded mx-auto d-block\">"."<br>"." Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
+					}
+				} else {
+					echo "0 results";
 				}
-			} else {
-				echo "0 results";
-			}
-		?>
-	</div>
+			?>
+		</div>
 
-	<div id="getBrownies2">
-		<?php
-			
-			$sql = "SELECT * FROM `brownies` WHERE ID=2";
-			$result = $conn->query($sql);
+		<div id="getBrownies2">
+			<?php
+				
+				$sql = "SELECT * FROM `brownies` WHERE ID=2";
+				$result = $conn->query($sql);
 
-			if($result ->num_rows>0){
-				//output data of each row
-				while($row=$result->fetch_assoc()){
-					echo " Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
+				if($result ->num_rows>0){
+					//output data of each row
+					while($row=$result->fetch_assoc()){
+						echo "<img src=\"./img/menuBtn2.jpg\" class=\"rounded mx-auto d-block\" height=200 width=250>"."<br>"." Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
+					}
+				} else {
+					echo "0 results";
 				}
-			} else {
-				echo "0 results";
-			}
-		?>
-	</div>
+			?>
+		</div>
 
-	<div id="getBrownies3">
-		<?php
-			
-			$sql = "SELECT * FROM `brownies` WHERE ID=3";
-			$result = $conn->query($sql);
+		<div id="getBrownies3">
+			<?php
+				
+				$sql = "SELECT * FROM `brownies` WHERE ID=3";
+				$result = $conn->query($sql);
 
-			if($result ->num_rows>0){
-				//output data of each row
-				while($row=$result->fetch_assoc()){
-					echo " Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
+				if($result ->num_rows>0){
+					//output data of each row
+					while($row=$result->fetch_assoc()){
+						echo "<img src=\"./img/menuBtn3.jpg\" class=\"rounded mx-auto d-block\" height=200 width=250>"."<br>"." Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
+					}
+				} else {
+					echo "0 results";
 				}
-			} else {
-				echo "0 results";
-			}
-		?>
-	</div>
+			?>
+		</div>
 
-	<div id="getBrownies4">
-		<?php
-			
-			$sql = "SELECT * FROM `brownies` WHERE ID=4";
-			$result = $conn->query($sql);
+		<div id="getBrownies4">
+			<?php
+				
+				$sql = "SELECT * FROM `brownies` WHERE ID=4";
+				$result = $conn->query($sql);
 
-			if($result ->num_rows>0){
-				//output data of each row
-				while($row=$result->fetch_assoc()){
-					echo " Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
+				if($result ->num_rows>0){
+					//output data of each row
+					while($row=$result->fetch_assoc()){
+						echo "<img src=\"./img/menuBtn4.jpg\" class=\"rounded mx-auto d-block\" height=200 width=250>"."<br>"." Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
+					}
+				} else {
+					echo "0 results";
 				}
-			} else {
-				echo "0 results";
-			}
+			?>
+		</div>
+
+		<?php 
+		    $sql = "SELECT * FROM `brownies`";
+		    $result = $conn->query($sql);
+		    $resultName[] = array();
+		    $resultPrice[] = array();
+		    $resultDetail[] = array();
+
+		    while($row=$result->fetch_assoc()){
+		        // $allResults[] = $row["Name"];
+		        $resultName[] = $row["Name"];
+		        $resultPrice[] = $row["Price"];
+		        $resultDetail[] = $row["Detail"];
+		    }
+
+		    $max = sizeof($resultName);
+		    for ($x = 1; $x < $max; $x++) {
+		        echo " Jenis: " . $resultName[$x]. "<br>". " Harga: RM" . $resultPrice[$x]."<br>". " Penerangan: ". $resultDetail[$x]."<br><br>";
+		    }
+
 		?>
-	</div>
-
-<?php 
-	$sql = "SELECT COUNT(*) FROM `brownies`";
-	$resultCount = $conn->query($sql);
-	$total = count((array) $resultCount);
 
 
-	echo "$total";
-	//echo gettype($resultCount); get the datatype of variable.
+		<script>
+		$(document).ready(function(){
+		  $("#getBrownies1").show();
+		     	$("#getBrownies2").hide();
+		     		$("#getBrownies3").hide();
+		     			$("#getBrownies4").hide();
 
-for ($i=0; $i < $total; $i++) { 
-	echo "value = $i";
-	echo $row["Name"];
+		     	$("#btnBrownies1").click(function(){
+		     		$("#getBrownies2").hide();
+		     		$("#getBrownies3").hide();
+		     		$("#getBrownies4").hide();
+		     		$("#getBrownies1").show();
 
-	/*while($row[$i]=$result->fetch_assoc()){
-		echo " Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
-	}*/
-}
+		     	})
 
+		     	$("#btnBrownies2").click(function(){
+		     		$("#getBrownies4").hide();
+		     		$("#getBrownies3").hide();
+		     		$("#getBrownies1").hide();
+		     		$("#getBrownies2").show();
+		     	});
 
-?>
+		     	$("#btnBrownies3").click(function(){
+		     		$("#getBrownies4").hide();
+		     		$("#getBrownies2").hide();
+		     		$("#getBrownies1").hide();
+		     		$("#getBrownies3").show();
+		            $("#text").html("Second List Name");
+		     	});
 
-	<script>
-	$(document).ready(function(){
-	  $("#getBrownies1").show();
-	     	$("#getBrownies2").hide();
-	     		$("#getBrownies3").hide();
-	     			$("#getBrownies4").hide();
+		     	$("#btnBrownies4").click(function(){
+		     		$("#getBrownies2").hide();
+		     		$("#getBrownies3").hide();
+		     		$("#getBrownies1").hide();
+		     		$("#getBrownies4").show();
+		            $("#text").html("Second List Name");
+		     	});
+		});
+		</script>
 
-	     	$("#btnBrownies1").click(function(){
-	     		$("#getBrownies2").hide();
-	     		$("#getBrownies3").hide();
-	     		$("#getBrownies4").hide();
-	     		$("#getBrownies1").show();
+		</div>
 
-	     	})
+	</div>	  
 
-	     	$("#btnBrownies2").click(function(){
-	     		$("#getBrownies4").hide();
-	     		$("#getBrownies3").hide();
-	     		$("#getBrownies1").hide();
-	     		$("#getBrownies2").show();
-	     	});
+<!--Testimoni Tab-->
 
-	     	$("#btnBrownies3").click(function(){
-	     		$("#getBrownies4").hide();
-	     		$("#getBrownies2").hide();
-	     		$("#getBrownies1").hide();
-	     		$("#getBrownies3").show();
-	            $("#text").html("Second List Name");
-	     	});
-
-	     	$("#btnBrownies4").click(function(){
-	     		$("#getBrownies2").hide();
-	     		$("#getBrownies3").hide();
-	     		$("#getBrownies1").hide();
-	     		$("#getBrownies4").show();
-	            $("#text").html("Second List Name");
-	     	});
-	});
-	</script>
-
-	</div>
-
-</div>	  
-
-<!--Testimoni-->
-
-			  <div class="tab-pane fade" id="pills-testimony" role="tabpanel" aria-labelledby="pills-testimony-tab">
+	    <div class="tab-pane fade" id="pills-testimony" role="tabpanel" aria-labelledby="pills-testimony-tab">
 			  	<br>
 
-			  		<div class="card">
-					  <div class="cardHeader">
-					    Testimoni 1
-					    	<br>
-					    	<img src="img/testimoni1.jpg" class="rounded mx-auto d-block" alt="Mohd Zuhair Khazani" style="width:300px;height:300px;">
-					  </div>
+<!--Testimoni Content-->
 
-					  <div class="cardBody">
-					    <blockquote class="blockquote mb-0">
-					      <p>"Pertama kali rasa memang sedap dan enak! Lain daripada yang lain dan memang boleh <b><i>repeat order</i></b> la senang cerita. Tak perlu komen apa-apa lagi, memang <b><i>the best!</i></b>"</p>
+		<div class="card">
+			<?php 
+			    $sql = "SELECT * FROM `testimoni`";
+			    $result = $conn->query($sql);
+			    $testimony[] = array();
+			    $testimonyName[] = array();
+			    $testimonyDetail[] = array();
+			    $testimonyImage[] = array();
 
+			    while($row=$result->fetch_assoc()){
+			        $testimony[] = $row["id"];
+			        $testimonyName[] = $row["name"];
+			        $testimonyDetail[] = $row["detail"];
+			        $testimonyImage[] = $row["image"];
+			    }
 
-					      <footer class="blockquote-footer">Mohd Zuhair Khazani</footer>
-					    </blockquote>
-					  </div>
-					</div>
+			    $max = sizeof($testimony);
+			    for ($x = 1; $x < $max; $x++) {
+			    	echo "<div class=\"cardHeader\">";
+			        echo "Testimoni $testimony[$x]";
+			        echo "<br>";
+			        //<img src="/try/blaba.jpg">
+			    	echo "<img src=\" " .$testimonyImage[$x]."\"class=\"rounded mx-auto d-block\" height=300px width=300px>";
+			    	echo "</div>";
+			    	echo "<div class=\"cardBody\">";
+				    echo "<blockquote class=\"blockquote mb-0\">";
+				    echo $testimonyDetail[$x];
+				    echo "<footer class=\"blockquote-footer\">".$testimonyName[$x]."</footer>"."<br>";
+				    echo "</blockquote><hr>";
+			    }
 
-					<br>
+			?>
 
-			  		<div class="card">
-					  <div class="cardHeader">
-					    Testimoni 2
-					    	<br>
-					    	<img src="img/testimoni2.jpg" class="rounded mx-auto d-block" alt="Mohd Zuhair Khazani" style="width:300px;height:300px;">
-					  </div>
+		</div>
+				
+		<br>
 
-					  <div class="cardBody">
-					    <blockquote class="blockquote mb-0">
-					      <p>"Nak cakap macam mana pun tak tahu la sebab rasa dia <b><i>tak boleh diungkapkan dengan kata-kata!</i></b> Sampai macam tu sekali rasanya memang aduhai, tak pekena dalam sebulan tu <b><i>boleh ketaq lutut oii</i></b>"</p>
-
-
-					      <footer class="blockquote-footer">Mat Topoi</footer>
-					    </blockquote>
-					  </div>
-					</div>
-			  </div>
-
-			</div>
+			  		
+			  
+</div>
+</div>
+</div>
 
 <hr>
 <br>
