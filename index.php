@@ -30,7 +30,9 @@ include ('db.php');
 			  </li>
 			</ul>
 
-<!--Nav Contents -->
+<!--Nav Menu End-->
+
+<!--Halaman Utama Contents -->
 
 		<hr>
 			<div class="tab-content" id="pills-tabContent">
@@ -48,6 +50,7 @@ include ('db.php');
 					</div>		
 			  </div>
 
+<!--Halaman Utama Contents End-->
 			  
 <!-- Menu Button -->
 
@@ -56,116 +59,44 @@ include ('db.php');
 
 	    <div class="box-2">
 
-			<a id="btnBrownies1" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Brownies Chocolate Mousse"> Brownies Chocolate Mousse
-			</a>
 
-			<a id="btnBrownies2" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Brownies Cheese">
-			Brownies Cheese 
-			</a>
-					
-			<a id="btnBrownies3" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Brownies Marble">
-			Brownies Marble
-			</a>
-						
-			<a id="btnBrownies4" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Brownies Durian">
-			Brownies Durian
-			</a>
-			<br>
-			<br>
-
-						
-<!--Menu Button Contents -->	
-
-
-		<div id="getBrownies1">
-			<?php
-				
-				$sql = "SELECT * FROM `brownies` WHERE ID=1";
-				$result = $conn->query($sql);
-
-				if($result ->num_rows>0){
-					//output data of each row
-					while($row=$result->fetch_assoc()){
-						echo "<img src=\"./img/menuBtn1.jpg\" class=\"rounded mx-auto d-block\">"."<br>"." Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
-					}
-				} else {
-					echo "0 results";
-				}
-			?>
-		</div>
-
-		<div id="getBrownies2">
-			<?php
-				
-				$sql = "SELECT * FROM `brownies` WHERE ID=2";
-				$result = $conn->query($sql);
-
-				if($result ->num_rows>0){
-					//output data of each row
-					while($row=$result->fetch_assoc()){
-						echo "<img src=\"./img/menuBtn2.jpg\" class=\"rounded mx-auto d-block\" height=200 width=250>"."<br>"." Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
-					}
-				} else {
-					echo "0 results";
-				}
-			?>
-		</div>
-
-		<div id="getBrownies3">
-			<?php
-				
-				$sql = "SELECT * FROM `brownies` WHERE ID=3";
-				$result = $conn->query($sql);
-
-				if($result ->num_rows>0){
-					//output data of each row
-					while($row=$result->fetch_assoc()){
-						echo "<img src=\"./img/menuBtn3.jpg\" class=\"rounded mx-auto d-block\" height=200 width=250>"."<br>"." Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
-					}
-				} else {
-					echo "0 results";
-				}
-			?>
-		</div>
-
-		<div id="getBrownies4">
-			<?php
-				
-				$sql = "SELECT * FROM `brownies` WHERE ID=4";
-				$result = $conn->query($sql);
-
-				if($result ->num_rows>0){
-					//output data of each row
-					while($row=$result->fetch_assoc()){
-						echo "<img src=\"./img/menuBtn4.jpg\" class=\"rounded mx-auto d-block\" height=200 width=250>"."<br>"." Jenis: " . $row["Name"]. "<br>". " Harga: RM" . $row["Price"]."<br>". " Penerangan: ". $row["Detail"]."<br><br>";
-					}
-				} else {
-					echo "0 results";
-				}
-			?>
-		</div>
-
-		<?php 
-		    $sql = "SELECT * FROM `brownies`";
+		<?php
+			
+			$sql = "SELECT * FROM `brownies`";
 		    $result = $conn->query($sql);
 		    $resultName[] = array();
 		    $resultPrice[] = array();
 		    $resultDetail[] = array();
+		    $resultImage[] = array();
 
+		    if($result ->num_rows>0){
 		    while($row=$result->fetch_assoc()){
-		        // $allResults[] = $row["Name"];
 		        $resultName[] = $row["Name"];
 		        $resultPrice[] = $row["Price"];
 		        $resultDetail[] = $row["Detail"];
+		        $resultImage[] = $row["Image"];
 		    }
 
 		    $max = sizeof($resultName);
 		    for ($x = 1; $x < $max; $x++) {
-		        echo " Jenis: " . $resultName[$x]. "<br>". " Harga: RM" . $resultPrice[$x]."<br>". " Penerangan: ". $resultDetail[$x]."<br><br>";
-		    }
+					echo "<div id = btnBrownies".$x." class=\"btn btn-secondary\" data-toggle=\"tooltip\" data-placement=\"left\" title=".$resultName[$x].">".$resultName[$x]."</div>";
+				}
 
+			for ($x = 1; $x < $max; $x++) {
+					echo "<div id = getBrownies".$x.">";
+		        	echo "<img src=\"".$resultImage[$x]."\" class=\"rounded mx-auto d-block\" height=200 width=250>"."<br>"." Jenis: " . $resultName[$x]. "<br>". " Harga: RM" . $resultPrice[$x]."<br>". " Penerangan: ". $resultDetail[$x]."<br><br>";
+		        	echo "</div>";
+			}} else {
+				echo "0 results";
+			}
 		?>
 
+<!--Menu Button End-->
+
+			<br>
+			<br>
+
+<!--Button Function -->
 
 		<script>
 		$(document).ready(function(){
@@ -207,6 +138,8 @@ include ('db.php');
 		});
 		</script>
 
+<!--Button Function End -->
+
 		</div>
 
 	</div>	  
@@ -214,6 +147,9 @@ include ('db.php');
 <!--Testimoni Tab-->
 
 	    <div class="tab-pane fade" id="pills-testimony" role="tabpanel" aria-labelledby="pills-testimony-tab">
+
+<!--Testimoni End-->
+
 			  	<br>
 
 <!--Testimoni Content-->
@@ -250,6 +186,9 @@ include ('db.php');
 			    }
 
 			?>
+		</div>
+
+<!--Testimoni Content End-->
 
 		</div>
 				
@@ -260,7 +199,6 @@ include ('db.php');
 </div>
 </div>
 </div>
-
 <hr>
 <br>
 
