@@ -14,6 +14,9 @@ include ('db.php');
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 	<div class="container">
@@ -22,15 +25,36 @@ include ('db.php');
 			  <li class="navItem">
 			    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Halaman Utama</a>
 			  </li>
+			  
 			  <li class="navItem">
 			    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-menu" role="tab" aria-controls="pills-menu" aria-selected="false">Menu</a>
 			  </li>
 			  <li class="navItem">
 			    <a class="nav-link" id="pills-testimony-tab" data-toggle="pill" href="#pills-testimony" role="tab" aria-controls="pills-testimony" aria-selected="false">Testimoni</a>
 			  </li>
+			  <li class="navItem">
+			    <a class="nav-link" id="pills-form-tab" data-toggle="pill" href="#pills-form" role="tab" aria-controls="form" aria-selected="false">Pendaftaran Ahli</a>
+			  </li>
 			</ul>
 
 <!--Nav Menu End-->
+
+<!--Refresh on the same tab -->
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+        localStorage.setItem('activeTab', $(e.target).attr('href'));
+    });
+    var activeTab = localStorage.getItem('activeTab');
+    if(activeTab){
+        $('#pills-tab a[href="' + activeTab + '"]').tab('show');
+        
+    }
+});
+</script>
+
+<!--End refreshing-->
 
 <!--Halaman Utama Contents -->
 
@@ -51,7 +75,18 @@ include ('db.php');
 			  </div>
 
 <!--Halaman Utama Contents End-->
-			  
+
+<!--Register Form -->
+ <div class="tab-pane fade" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
+
+ 	<?php 
+ 	include 'register.php'; 
+ 	?>
+
+
+
+</div>
+		
 <!-- Menu Button -->
 
         <div class="tab-pane fade" id="pills-menu" role="tabpanel" aria-labelledby="pills-menu-tab">
@@ -148,7 +183,6 @@ include ('db.php');
 
 	    <div class="tab-pane fade" id="pills-testimony" role="tabpanel" aria-labelledby="pills-testimony-tab">
 
-<!--Testimoni End-->
 
 			  	<br>
 
