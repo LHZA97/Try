@@ -35,6 +35,19 @@ include ('db.php');
 			  <li class="navItem">
 			    <a class="nav-link" id="pills-form-tab" data-toggle="pill" href="#pills-form" role="tab" aria-controls="form" aria-selected="false">Pendaftaran Ahli</a>
 			  </li>
+			  <li></li>
+			  <li>
+			 
+			  <?php include 'dbR.php';?>
+
+			  <?php if (isset($_SESSION['username'])): ?>
+					<div class=content>
+					<p>Selamat Datang <?php echo $_SESSION["username"]?></p>
+					<p><a href="index.php?logout='1'" style="color:red;">Log keluar</a></p>
+					</div>
+				<?php endif ?>
+	  			
+				</li>
 			</ul>
 
 <!--Nav Menu End-->
@@ -49,7 +62,6 @@ include ('db.php');
     var activeTab = localStorage.getItem('activeTab');
     if(activeTab){
         $('#pills-tab a[href="' + activeTab + '"]').tab('show');
-        
     }
 });
 </script>
@@ -58,34 +70,54 @@ include ('db.php');
 
 <!--Halaman Utama Contents -->
 
+		
+
 		<hr>
 			<div class="tab-content" id="pills-tabContent">
 			  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 			  	<br>
+<!--Database respond after register-->
+		
+		<?php if (isset($_SESSION['success'])): ?>
+					<div class="error success">
+					<h3>
+						<?php
+							echo $_SESSION['success'];
+							unset($_SESSION['success']);
+							
+						?>
+					</h3>
+					</div>
+		<?php endif ?>
+		
 
-					<figure>
-						<img src="img/HomePage.jpg" class="rounded mx-auto d-block" alt="Brownies Bakar Sedapnye Hmmmmm">
-					</figure>
+<!--Start the first content-->
 
-					<div class="box-1">
-						<p>Brownies enak lagi lazat sehingga menjilat jilat jari-jari anda!</p>
-						<br>
-						<p>Di sini ada pelbagai hidangan brownies yang boleh dipilih:</p>
-					</div>		
-			  </div>
+
+			<figure>
+				<img src="img/HomePage.jpg" class="rounded mx-auto d-block" alt="Brownies Bakar Sedapnye Hmmmmm">
+			</figure>
+
+			<div class="box-1">
+				<p>Brownies enak lagi lazat sehingga menjilat jilat jari-jari anda!</p>
+				<br>
+				<p>Di sini ada pelbagai hidangan brownies yang boleh dipilih:</p>
+			</div>		
+	  </div>
 
 <!--Halaman Utama Contents End-->
 
 <!--Register Form -->
+
  <div class="tab-pane fade" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
 
  	<?php 
  	include 'register.php'; 
  	?>
 
-
-
+ 	
 </div>
+<!--End of Register Form -->
 		
 <!-- Menu Button -->
 

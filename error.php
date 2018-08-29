@@ -1,7 +1,11 @@
-<?php if (count($error) > 0): ?>
+<?php 
+
+include 'dbR.php';
+
+if (count($errors) > 0): ?>
 	<div class="error">
-		<?php foreach ($error as $error): ?>
-			<p><?php echo $error; ?></p>
+		<?php foreach ($errors as $errors): ?>
+			<p><?php echo $errors; ?></p>
 		<?php endforeach ?>
 	</div>
 <?php endif ?>

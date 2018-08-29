@@ -16,10 +16,17 @@
 	padding: 20px;
 }
 
-form{
+form {
 	width: 50%;
 	margin: 0px auto;
 	padding: 20px;
+	border: 1.5px solid #91492C;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.content {
+    margin: auto;
+    padding: 10px;
 	border: 1.5px solid #91492C;
 	border-radius: 0px 0px 10px 10px;
 }
@@ -63,4 +70,11 @@ form{
 	background: #F2DEDE;
 	border-radius: 5px;
 	text-align: left;
+}
+
+.success{
+	color: #3C763D;
+	background: #DFF0D8;
+	border: 1px solid #3C763D;
+	margin-bottom: 20px;
 }

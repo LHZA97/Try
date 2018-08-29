@@ -1,5 +1,5 @@
 <?php\
-include 'db.php'
+include 'dbR.php';
  ?>
 
 <!DOCTYPE html>
@@ -17,6 +17,8 @@ include 'db.php'
 <br>
 
 <form method="post" action="login.php">
+	<!--display data error here-->
+	<?php include 'error.php'; ?>
 	<div class="input-group">
 		<label>Nama Pengguna</label>
 		<input type="text" name="username">
@@ -24,7 +26,7 @@ include 'db.php'
 	<br>
 	<div class="input-group">
 		<label>Kata Laluan</label>
-		<input type="password" name="password1">
+		<input type="password" name="password">
 	</div>
 	<br>
 	<div class="input-group">
@@ -34,7 +36,6 @@ include 'db.php'
 	Belum menjadi ahli?<a href="register.php"> Daftar sekarang!</a>
 	</p>
 </form>
-
 
 </body>
 </html>

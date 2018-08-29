@@ -1,4 +1,8 @@
 
+<?php 
+include 'dbR.php'; 
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,12 +19,7 @@
 <br>
 
 
-
-
-
-<!--End Verify table from database-->
-
-<!--From-->
+<!--Form-->
 
 <form method="post" action="register.php">
 	<?php include 'error.php'; ?>
@@ -53,27 +52,6 @@
 </form>
 
 <!--End of form-->
-
-<div class="content">
-	<?php if (isset($_SESSION['success'])): ?>
-		<div class="error success">
-			<h3>
-			<?php
-				echo $_SESSION['success'];
-				unset($_SESSION['success']);
-			?>
-			</h3>
-		</div>
-	<?php endif ?>
-
-	<?php if (isset($_SESSION['username'])): ?>
-		<p>Selamat Datang <?php echo $_SESSION["username"];?></p>
-		<p><a href="index.php?logout='1'" style="color:red;">Log keluar</a></p>
-	<?php endif ?>
-
-	
-
-</div>
 
 </body>
 </html>
